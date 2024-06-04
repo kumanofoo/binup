@@ -14,9 +14,6 @@ env:
 jobs:
   build:
     runs-on: ${{ matrix.os }}
-    defaults:
-      run:
-        working-directory: binup
     strategy:
       matrix:
         include:
