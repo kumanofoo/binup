@@ -42,7 +42,7 @@ jobs:
         dirname="${{ env.PACKAGE_NAME }}-${GITHUB_REF#refs/tags/}-${{ matrix.target }}"
         mkdir "$dirname"
         mv "./target/${{ matrix.target }}/release/${{ env.PACKAGE_NAME }}" "$dirname"
-        tar -czf "../$dirname.tar.gz" "$dirname"
+        tar -czf "$dirname.tar.gz" "$dirname"
         echo "ASSET=$dirname.tar.gz" >> $GITHUB_ENV
 
     - name: Release
